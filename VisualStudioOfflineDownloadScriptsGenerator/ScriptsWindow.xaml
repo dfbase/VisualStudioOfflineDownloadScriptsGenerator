@@ -29,9 +29,15 @@
         <Style x:Key="RowSpliter" TargetType="RowDefinition">
             <Setter Property="Height" Value="7"></Setter>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Padding" Value="5,0"></Setter>
+            <Setter Property="Cursor" Value="Hand"></Setter>
+        </Style>
     </Window.Resources>
     <Grid Margin="8">
         <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource RowStyle}"></RowDefinition>
+            <RowDefinition Style="{StaticResource RowSpliter}"></RowDefinition>
             <RowDefinition Style="{StaticResource RowStyle}"></RowDefinition>
             <RowDefinition Style="{StaticResource RowSpliter}"></RowDefinition>
             <RowDefinition Style="{StaticResource RowStyle}"></RowDefinition>
@@ -51,5 +57,6 @@
                    Foreground="Red" 
                    TextWrapping="WrapWithOverflow"
                    Text="说明：以管理员权限打开命令行，先执行脚本①，①执行完后然后再执行脚本②，全部完成后即得到离线安装包。"></TextBlock>
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Height="35" Name="btnExport">导出脚本</Button>
     </Grid>
 </Window>
